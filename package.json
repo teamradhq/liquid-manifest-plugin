@@ -1,0 +1,35 @@
+{
+  "name": "liquid-manifest-plugin",
+  "version": "0.0.0",
+  "description": "Webpack plugin to generate a liquid template containing the asset manifest",
+  "main": "index.js",
+  "author": "Paul Beynon <paul@beynon.app>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --env.mode=build",
+    "develop": "webpack --env.MODE=develop",
+    "example": "webpack --env.MODE=example",
+    "test": "jest --config ./jest.config.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.5",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "core-js": "^3.4.7",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "jest": "^24.9.0",
+    "nodemon-webpack-plugin": "^4.2.1",
+    "webpack": "^4.41.2",
+    "webpack-merge": "^4.2.2"
+  }
+}

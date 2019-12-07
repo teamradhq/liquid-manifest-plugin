@@ -6,6 +6,6 @@ const filenameRegExp = /\.([a-zA-Z])/g;
  * @param  {String} str
  * @return {String}
  */
-const variableName = str => {};
+const variableName = str => '{}';
 
 export default variableName;

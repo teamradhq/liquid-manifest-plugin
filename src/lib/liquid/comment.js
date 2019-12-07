@@ -15,7 +15,7 @@ const block = (str, isBlock = false) => (
  * @return {String}
  */
 const comment = (str, isBlock = false) => (
-  `${start}${end}`
+  `${start}${str}${end}`
 );
 
 export default comment;

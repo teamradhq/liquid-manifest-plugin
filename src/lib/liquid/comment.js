@@ -14,6 +14,8 @@ const block = (str, isBlock = false) => (
  * @param  {Boolean} isBlock
  * @return {String}
  */
-const comment = (str, isBlock = false) => '{}';
+const comment = (str, isBlock = false) => (
+  `${start}${end}`
+);
 
 export default comment;

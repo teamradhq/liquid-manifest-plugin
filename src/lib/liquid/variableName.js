@@ -6,6 +6,9 @@ const filenameRegExp = /\.([a-zA-Z])/g;
  * @param  {String} str
  * @return {String}
  */
-const variableName = str => '{}';
+const variableName = str => str.replace(
+  filenameRegExp,
+  (m, grp) => grp.toUpperCase()
+);
 
 export default variableName;

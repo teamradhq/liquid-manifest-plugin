@@ -5,6 +5,8 @@
  * @param  {String} value
  * @return {String}
  */
-const variable = (varname, value) => '{}';
+const variable = (varname, value) => (
+  `{% assign ${varname} = ${value} %}`
+);
 
 export default variable;

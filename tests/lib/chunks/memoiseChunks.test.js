@@ -15,4 +15,9 @@ describe('lib.chunks.memoiseChunks', () => {
     expect(memoiseObjectArray.default)
       .toBeCalledWith(chunks, key);
   });
+
+  it('should return memoised object', () => {
+    expect(memoiseChunks())
+      .toBe(memoiseObjectArray.expected);
+  });
 });

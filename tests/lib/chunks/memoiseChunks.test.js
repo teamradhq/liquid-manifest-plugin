@@ -3,9 +3,9 @@ import memoiseChunks from '@/lib/chunks/memoiseChunks';
 import memoiseObjectArray from '%/lib/helpers/memoiseObjectArray.mock';
 
 const chunks = [
-  { name: 'a'},
-  { name: 'b'},
-]
+  { name: 'a' },
+  { name: 'b' },
+];
 
 const key = 'name';
 

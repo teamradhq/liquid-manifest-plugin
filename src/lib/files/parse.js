@@ -9,3 +9,5 @@ import toMemo from './toMemo';
  * @return {Object}
  */
 const parse = (files) => files.reduce(toMemo, {});
+
+export default parse;

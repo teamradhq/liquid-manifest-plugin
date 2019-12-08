@@ -24,5 +24,5 @@ describe('lib.helpers.memoiseObjectArray', () => {
   it('should apply transform function to elements', () => {
     const output = memoiseObjectArray(input, testKey, transform);
     expect(output[input[0][testKey]]).toBe(transform());
-  })
+  });
 });

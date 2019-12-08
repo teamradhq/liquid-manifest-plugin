@@ -21,6 +21,7 @@ module.exports = {
       alias: {
         '@': './src',
         '#': './tests',
+        '%': './tests/mocks',
       },
     }],
   ],

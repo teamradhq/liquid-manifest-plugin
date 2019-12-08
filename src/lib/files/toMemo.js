@@ -1,4 +1,4 @@
-import toFileObject from './toFileObject';
+import transformFileToAsset from './transformFileToAsset';
 
 /**
  * Add a {file} to a {memoised} object.
@@ -11,10 +11,10 @@ import toFileObject from './toFileObject';
  */
 const toMemo = (memoised, { filename, varname }) => ({
   ...memoised,
-  [filename]: {
-    ...toFileObject(filename),
-    varname: varname || filename,
-  },
+  [filename]: transformFileToAsset({
+    filename,
+    varname,
+  }),
 });
 
 export default toMemo;

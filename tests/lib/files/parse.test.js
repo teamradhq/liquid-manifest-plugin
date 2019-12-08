@@ -1,14 +1,10 @@
 import parse from '@/lib/files/parse';
 
-import * as transformFileToAsset from '@/lib/files/transformFileToAsset';
+import transformFileToAsset from '%/lib/files/transformFileToAsset.mock';
 import memoiseObjectArray from '%/lib/helpers/memoiseObjectArray.mock';
 
 describe('lib.files.parse', () => {
   const input = [1, 2, 3];
-
-
-  transformFileToAsset.default = jest.fn();
-
   const args = [
     input,
     'filename',

@@ -1,12 +1,12 @@
-import * as transformFileToAsset from '@/lib/files/transformFileToAsset';
-import * as memoiseObjectArray from '@/lib/helpers/memoiseObjectArray';
 import parse from '@/lib/files/parse';
 
+import * as transformFileToAsset from '@/lib/files/transformFileToAsset';
+import memoiseObjectArray from '%/lib/helpers/memoiseObjectArray.mock';
+
 describe('lib.files.parse', () => {
-  const expected = 'memoise';
   const input = [1, 2, 3];
 
-  memoiseObjectArray.default = jest.fn(() => expected);
+
   transformFileToAsset.default = jest.fn();
 
   const args = [
@@ -28,6 +28,6 @@ describe('lib.files.parse', () => {
   });
 
   it('return memoised value', () => {
-    expect(parse(input)).toBe(expected);
+    expect(parse(input)).toBe(memoiseObjectArray.expected);
   });
 });

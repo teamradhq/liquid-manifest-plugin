@@ -1,5 +1,12 @@
 import memoiseObjectArray from '@/lib/helpers/memoiseObjectArray';
 
-const memoiseChunks = (chunks) => memoiseObjectArray();
+/**
+ * Memoise chunks by chunk name.
+ * @param  {Array} chunks
+ * @return {Object}
+ */
+const memoiseChunks = (chunks) => (
+  memoiseObjectArray(chunks, 'name')
+);
 
 export default memoiseChunks;

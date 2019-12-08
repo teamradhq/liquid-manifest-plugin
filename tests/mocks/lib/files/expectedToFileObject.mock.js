@@ -5,9 +5,12 @@ import toFileObjectMock from '%/lib/files/toFileObject.mock';
  * @param  {String} varname
  * @return {Object}
  */
-const expectedToFileObject = (varname) => ({
+const expectedToFileObject = (varname) => {
+
+return ({
   ...toFileObjectMock.default(),
   varname,
 });
+}
 
 export default expectedToFileObject;

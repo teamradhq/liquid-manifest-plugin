@@ -1,11 +1,33 @@
-import * as toMemo from '@/lib/files/toMemo';
+import * as transformFileToAsset from '@/lib/files/transformFileToAsset';
+import * as memoiseObjectArray from '@/lib/helpers/memoiseObjectArray';
 import parse from '@/lib/files/parse';
 
 describe('lib.files.parse', () => {
-  it('should reduce array using lib.files.toMemo', () => {
-    const input = [1, 2, 3];
-    toMemo.default = jest.fn();
+  const expected = 'memoise';
+  const input = [1, 2, 3];
+
+  memoiseObjectArray.default = jest.fn(() => expected);
+  transformFileToAsset.default = jest.fn();
+
+  const args = [
+    input,
+    'filename',
+    transformFileToAsset.default,
+  ];
+
+  it('should call lib.helpers.memoiseObjectArray', () => {
     parse(input);
-    expect(toMemo.default).toBeCalledTimes(input.length);
+    expect(memoiseObjectArray.default)
+      .toBeCalledTimes(1);
+  });
+
+  it('should memoise with transform function', () => {
+    parse(input);
+    expect(memoiseObjectArray.default)
+      .toBeCalledWith(...args);
+  });
+
+  it('return memoised value', () => {
+    expect(parse(input)).toBe(expected);
   });
 });

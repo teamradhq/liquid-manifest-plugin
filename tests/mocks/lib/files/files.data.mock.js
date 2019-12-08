@@ -1,9 +1,3 @@
-const name = 'filename';
-const ext = 'ext';
-const filename = `${name}.${ext}`;
-
-export default {
-  name,
-  ext,
-  filename,
-};
+export const name = 'filename';
+export const ext = 'ext';
+export const filename = `${name}.${ext}`;

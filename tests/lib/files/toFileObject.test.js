@@ -8,7 +8,7 @@ import {
 
 describe('lib.files.toFileObject', () => {
   it('should return expected object', () => {
-    expect(toFileObject('foo.br'))
+    expect(toFileObject(filename))
       .toEqual({ name, ext, filename });
   });
 });

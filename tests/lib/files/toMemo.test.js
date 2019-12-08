@@ -1,4 +1,5 @@
 import toMemo from '@/lib/files/toMemo';
+import * as toFileObject from '@/lib/files/toFileObject';
 
 import {
   name,
@@ -6,22 +7,16 @@ import {
   filename,
 } from '#/mocks/lib/files/files.data.mock';
 
-console.log({
-  name,
-  ext,
-  filename,
-});
-
 describe('lib.files.toMemo', () => {
   const memoised = { exists: true };
   const input = filename;
+
+  toFileObject.default = jest.fn(() => ({}));
+
   it('spread file into memoised', () => {
-    expect(toMemo(memoised, input)).toEqual({
+    expect(toMemo(memoised, { filename })).toEqual({
       ...memoised,
-      'filename.ext': {
-        ...toFileObject(filename),
-        varname: filename,
-      },
+      [filename]: { varname: filename },
     });
   });
 });

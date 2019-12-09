@@ -2,7 +2,7 @@ import render from '@/lib/template/render';
 
 import renderAsset from '%/lib/template/renderAsset.mock';
 
-jest.mock('@/lib/template/template-message', () => 'message');
+jest.mock('@/lib/template/message', () => 'message');
 
 const test = [1, 2, 3];
 

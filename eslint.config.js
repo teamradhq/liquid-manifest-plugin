@@ -9,6 +9,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  ignorePatterns: ['build/', 'dist/', 'node_modules/'],
   overrides: [{
     files: ['*.test.js', '*.mock.js'],
     rules: {

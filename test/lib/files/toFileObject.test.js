@@ -18,6 +18,6 @@ describe('lib.files.toFileObject', () => {
         name: undefined,
         ext: undefined,
         filename: undefined,
-       });
-  })
+      });
+  });
 });

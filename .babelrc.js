@@ -20,8 +20,8 @@ module.exports = {
       root: ['./src'],
       alias: {
         '@': './src',
-        '#': './tests',
-        '%': './tests/mocks',
+        '#': './test',
+        '%': './test/mocks',
       },
     }],
   ],

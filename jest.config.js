@@ -5,6 +5,6 @@ module.exports = {
   ],
   testEnvironment: 'node',
   testMatch: [
-    '**/tests/**/*.test.[jt]s?(x)',
+    '**/test/**/*.test.[jt]s?(x)',
   ],
 };

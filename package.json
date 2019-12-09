@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.build.js",
-    "example": "webpack --env.MODE=development",
+    "example": "webpack --config webpack.example.js",
     "lint": "eslint ./ --fix --config ./eslint.config.js",
     "test": "jest --config ./jest.config.js"
   },

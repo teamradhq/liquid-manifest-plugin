@@ -4,22 +4,17 @@ const webpack = require('webpack');
 /* eslint-enable no-unused-vars */
 const babelrc = require('./.babelrc');
 
-const LiquidManifestPlugin = require('./src/LiquidManifestPlugin');
-
+const LiquidManifestPlugin = require('./build/liquid-manifest-plugin').default;
 // : MiniCssExtractPlugin.loader,
 
 /**
  * devMode
  *   development  => Run a watcher that restarts webpack on change
  *   example      => Run our example webpack config
-   *   build        => Bundle our resource (add hook to do this on new tag)
  */
 
 module.exports = (env) => {
-  const { MODE: mode = 'development' } = {
-    ...process.env,
-    ...env,
-  };
+  const mode = 'development';
 
   const devMode = mode === 'development';
 
@@ -32,8 +27,8 @@ module.exports = (env) => {
     output: dist,
     filename: 'manifest.liquid',
     files: [
-      { file: 'index.js' },
-      { file: 'style.js' },
+      { filename: 'index.js' },
+      { filename: 'style.js', varname: 'awesomeVariable'},
     ],
   };
 
@@ -43,8 +38,8 @@ module.exports = (env) => {
   };
 
   const output = {
-    filename: '[name].js',
-    chunkFilename: '[name].js',
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js',
     path: dist,
     publicPath: '/',
   };
@@ -59,7 +54,7 @@ module.exports = (env) => {
   };
 
   const plugins = devMode
-    ? [new LiquidManifestPlugin(liquidOptions)]
+    ? [ new LiquidManifestPlugin(liquidOptions) ]
     : [];
 
   return {

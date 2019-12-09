@@ -6,7 +6,7 @@
   "author": "Paul Beynon <paul@beynon.app>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --env.mode=build",
+    "build": "webpack --config webpack.build.js",
     "example": "webpack --env.MODE=development",
     "lint": "eslint ./ --fix --config ./eslint.config.js",
     "test": "jest --config ./jest.config.js"

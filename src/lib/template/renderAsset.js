@@ -6,7 +6,7 @@ const renderAsset = ({ name, file, variable }) => {
 
   block += liquid.comment(name);
   block += liquid.variable('assetPath', `'${file}' | asset_url | split: '?'`);
-  block += liquid.variable(variable, `assetPath[0]`);
+  block += liquid.variable(variable, 'assetPath[0]');
 
   return block;
 };

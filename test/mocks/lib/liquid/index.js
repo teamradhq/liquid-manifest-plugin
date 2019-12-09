@@ -8,6 +8,6 @@ liquid.default = {
   comment: comment.default,
   variable: variable.default,
   variableName: variableName.default,
-}
+};
 
 export default liquid;

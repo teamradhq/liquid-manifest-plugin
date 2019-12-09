@@ -13,7 +13,7 @@ const test = {
   variable: 'variable',
 };
 
-const expected = test.name + 'assetPath' + test.variable;
+const expected = `${test.name}assetPath${test.variable}`;
 
 describe('lib.template.renderAsset', () => {
   it.each(mocks)('should call lib.liquid.%s %s times', (fn, n) => {

@@ -4,7 +4,7 @@ import renderAsset from '%/lib/template/renderAsset.mock';
 
 jest.mock('@/lib/template/template-message', () => 'message');
 
-const test = [1,2,3];
+const test = [1, 2, 3];
 
 describe('lib.template.render', () => {
   it('should apply lib.template.renderAsset to each asset', () => {
@@ -15,6 +15,6 @@ describe('lib.template.render', () => {
 
   it('should concatenate template message and rendered assets', () => {
     expect(render([test[0]]))
-      .toBe('message' + renderAsset.expected);
+      .toBe(`message${renderAsset.expected}`);
   });
 });

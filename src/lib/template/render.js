@@ -1,4 +1,3 @@
-import liquid from '@/lib/liquid';
 import renderAsset from './renderAsset';
 import TEMPLATE_MESSAGE from './template-message';
 

@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --env.mode=build",
-    "develop": "webpack --env.MODE=develop",
-    "example": "webpack --env.MODE=example",
+    "example": "webpack --env.MODE=development",
     "lint": "eslint ./ --fix --config ./eslint.config.js",
     "test": "jest --config ./jest.config.js"
   },
@@ -21,6 +20,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "core-js": "^3.4.7",
+    "css-loader": "^3.2.1",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -30,7 +30,11 @@
     "eslint-plugin-react": "^7.17.0",
     "jest": "^24.9.0",
     "nodemon-webpack-plugin": "^4.2.1",
+    "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.10"
   }
 }

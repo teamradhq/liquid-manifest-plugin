@@ -1,5 +1,6 @@
 .env
 node_modules
+dist
 vendor/*
 *.log
 *.sqlite
@@ -8,15 +9,9 @@ vendor/*
 .project
 .settings
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db
 *~
 /nbproject/
 .idea/*
-/symfony
 __MACOSX
-.vagrant/
-Vagrantfile
-vagrant/
-cache/

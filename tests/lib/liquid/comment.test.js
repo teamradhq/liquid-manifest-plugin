@@ -2,10 +2,14 @@ import comment from '@/lib/liquid/comment';
 
 const COMMENT = {
   start: '{% comment %}',
-  end: '{% endcomment %}',
+  end: '{% endcomment %}\n',
 };
 
 describe('lib.liquid.comment', () => {
+  it ('should end with newline', () => {
+    expect(comment('foo').endsWith('\n')).toBe(true);
+  });
+
   describe.each(['start', 'end'])('%s', (test) => {
     const block = COMMENT[test];
 

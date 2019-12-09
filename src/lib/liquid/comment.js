@@ -2,7 +2,7 @@
 const start = '{% comment %}';
 
 /** @type {String} Comment end block. */
-const end = start.replace('{% ', '{% end');
+const end = start.replace('{% ', '{% end') + '\n';
 
 const block = (str, isBlock = false) => (
   isBlock ? `\n${str}\n` : str

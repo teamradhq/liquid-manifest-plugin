@@ -6,7 +6,7 @@
  * @return {String}
  */
 const variable = (varname, value) => (
-  `{% assign ${varname} = ${value} %}`
+  `{% assign ${varname} = ${value} %}\n`
 );
 
 export default variable;

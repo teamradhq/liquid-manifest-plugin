@@ -7,7 +7,7 @@
  * @param  {Function} transform
  * @return {Function}
  */
-const memoiseObject = (key, transform) => (accumulator = {}, el) => ({
+const memoiseObject = (key, transform) => (accumulator, el) => ({
   ...accumulator,
   [el[key]]: (transform ? transform(el) : el),
 });

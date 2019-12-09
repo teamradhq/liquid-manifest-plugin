@@ -1,12 +1,8 @@
 const path = require('path');
-const fs = require('fs');
-/* eslint-disable no-unused-vars */
-const webpack = require('webpack');
-/* eslint-enable no-unused-vars */
+
 const babelrc = require('./.babelrc');
 
-module.exports = (env) => {
-  // const mode = 'production';
+module.exports = () => {
   const mode = 'development';
 
   const src = path.resolve(__dirname, 'src');
@@ -40,10 +36,10 @@ module.exports = (env) => {
           test: /\.(js)$/,
           exclude: /node_modules/,
           use: [
-            { loader: 'babel-loader', options: babelrc }
+            { loader: 'babel-loader', options: babelrc },
           ],
-        }
-      ]
-    }
+        },
+      ],
+    },
   };
 };

@@ -10,6 +10,6 @@ describe('lib/liquid', () => {
     it(`should ${isNewLine ? 'always' : 'not'} end with new line`, () => {
       expect(liquid[test]('anything').endsWith('\n'))
         .toBe(isNewLine);
-    })
+    });
   });
 });

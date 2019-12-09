@@ -1,7 +1,5 @@
 const path = require('path');
-/* eslint-disable no-unused-vars */
-const webpack = require('webpack');
-/* eslint-enable no-unused-vars */
+
 const babelrc = require('./.babelrc');
 
 const LiquidManifestPlugin = require('./build/liquid-manifest-plugin').default;
@@ -13,7 +11,7 @@ const LiquidManifestPlugin = require('./build/liquid-manifest-plugin').default;
  *   example      => Run our example webpack config
  */
 
-module.exports = (env) => {
+module.exports = () => {
   const mode = 'development';
 
   const devMode = mode === 'development';
@@ -28,7 +26,7 @@ module.exports = (env) => {
     filename: 'manifest.liquid',
     files: [
       { filename: 'index.js' },
-      { filename: 'style.js', varname: 'awesomeVariable'},
+      { filename: 'style.js', varname: 'awesomeVariable' },
     ],
   };
 
@@ -54,7 +52,7 @@ module.exports = (env) => {
   };
 
   const plugins = devMode
-    ? [ new LiquidManifestPlugin(liquidOptions) ]
+    ? [new LiquidManifestPlugin(liquidOptions)]
     : [];
 
   return {
@@ -77,7 +75,7 @@ module.exports = (env) => {
         },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"]
+          use: ['style-loader', 'css-loader'],
         },
       ],
     },

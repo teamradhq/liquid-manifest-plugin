@@ -1,7 +1,7 @@
 import toLiquidVars from './toLiquidVars';
-import liquidTemplate from './liquidTemplate';
+import render from './render';
 
 export default {
   toLiquidVars,
-  liquidTemplate,
+  render,
 };

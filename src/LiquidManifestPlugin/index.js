@@ -34,7 +34,7 @@ class LiquidManifestPlugin {
 
       fs.writeFileSync(
         `${output}/${filename}`,
-        template.liquidTemplate(liquidVars, publicpath),
+        template.render(liquidVars, publicpath),
       );
     });
   }

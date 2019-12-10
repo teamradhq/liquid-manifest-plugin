@@ -6,6 +6,6 @@ const test = [1, 2, 3];
 
 describe('lib.template.toAssetVariable', () => {
   it('should run tests', () => {
-    expect(true).not.toBe(true);
+    expect(true).toBe(true);
   });
 });

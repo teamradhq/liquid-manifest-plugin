@@ -27,7 +27,7 @@ class LiquidManifestPlugin {
       }
 
 
-      const liquidVars = template.toLiquidVars(
+      const liquidVars = template.toAssetVariable(
         files.parse(inputFiles),
         chunks.memoiseChunks(stats.compilation.chunks),
       );

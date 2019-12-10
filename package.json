@@ -9,6 +9,7 @@
     "build": "webpack --config webpack.build.js",
     "example": "webpack --config webpack.example.js",
     "lint": "eslint ./ --fix --config ./eslint.config.js",
+    "report": "jest --coverage --config ./jest.config.js",
     "test": "jest --config ./jest.config.js"
   },
   "dependencies": {

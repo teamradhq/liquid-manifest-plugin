@@ -1,7 +1,7 @@
-import getChunkFile from './getChunkFile';
+import findChunkFile from './findChunkFile';
 import memoiseChunks from './memoiseChunks';
 
 export default {
-  getChunkFile,
+  findChunkFile,
   memoiseChunks,
 };

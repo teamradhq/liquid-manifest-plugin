@@ -1,4 +1,4 @@
-import memoiseObjectArray from '@/lib/helpers//memoiseObjectArray';
+import memoiseObjectArray from '@/lib/helpers/memoiseObjectArray';
 import transformFileToAsset from './transformFileToAsset';
 
 /**

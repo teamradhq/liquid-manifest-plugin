@@ -10,7 +10,7 @@ const fileRegExp = new RegExp(/(.*)\.([A-Za-z0-9]{1,})$/);
  *
  * @return {Object}
  */
-const toFileObject = (str) => {
+const toFileObject = (chunks) => (str) => {
   const match = str ? str.match(fileRegExp) : [];
 
   const [
@@ -24,6 +24,7 @@ const toFileObject = (str) => {
     filename,
     name,
     variable: variableName(filename),
+    asset: findChunkFile(chunks, name, ext),
   };
 };
 

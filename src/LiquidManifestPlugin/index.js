@@ -25,15 +25,9 @@ class LiquidManifestPlugin {
         console.log("Output path doesn't exist");
       }
 
-
-      const liquidVars = template.toAssetVariable(
-        files.parse(inputFiles),
-        files.memoiseChunks(stats.compilation.chunks),
-      );
-
       fs.writeFileSync(
         `${output}/${filename}`,
-        template.render(liquidVars, publicpath),
+        template.render(files.parse(inputFiles, files.memoiseChunks(stats.compilation.chunks)), publicpath),
       );
     });
   }

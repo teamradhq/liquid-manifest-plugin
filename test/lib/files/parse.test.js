@@ -1,15 +1,10 @@
 import parse from '@/lib/files/parse';
 
-import transformFileToAsset from '%/lib/files/transformFileToAsset.mock';
+import toFileObject from '%/lib/files/toFileObject.mock';
 import memoiseObjectArray from '%/lib/helpers/memoiseObjectArray.mock';
 
 describe('lib.files.parse', () => {
   const input = [1, 2, 3];
-  const args = [
-    input,
-    'filename',
-    transformFileToAsset.default,
-  ];
 
   it('should call lib.helpers.memoiseObjectArray', () => {
     parse(input);
@@ -17,10 +12,16 @@ describe('lib.files.parse', () => {
       .toBeCalledTimes(1);
   });
 
-  it('should memoise with transform function', () => {
+  it('should memoise with lib.files.toFileObject', () => {
     parse(input);
-    expect(memoiseObjectArray.default)
-      .toBeCalledWith(...args);
+    expect(toFileObject.default)
+      .toBeCalledTimes(1);
+  });
+
+  it('should memoise with supplied chunks object', () => {
+    parse(input, 'chunks');
+    expect(toFileObject.default)
+      .toBeCalledWith('chunks');
   });
 
   it('return memoised value', () => {

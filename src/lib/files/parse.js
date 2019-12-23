@@ -1,5 +1,5 @@
 import memoiseObjectArray from '@/lib/helpers/memoiseObjectArray';
-import transformFileToAsset from './transformFileToAsset';
+import toFileObject from './toFileObject';
 
 /**
  * Parse {files} from options to memoised
@@ -9,6 +9,10 @@ import transformFileToAsset from './transformFileToAsset';
  *
  * @return {Object}
  */
-const parse = (files) => memoiseObjectArray(files, 'filename', transformFileToAsset);
+const parse = (files, chunks) => {
+  const transform = toFileObject(chunks);
+
+  return memoiseObjectArray(files, 'filename', transform);
+};
 
 export default parse;

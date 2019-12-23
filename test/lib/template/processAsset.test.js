@@ -14,9 +14,9 @@ const entry = (ext = 'js') => [
     varname: 'varname',
     file: 'filename',
     filename: `file-1.${ext}`,
-    name: `file-1`,
+    name: 'file-1',
     ext,
-  }
+  },
 ];
 
 describe('lib.template.processAsset', () => {
@@ -42,14 +42,14 @@ describe('lib.template.processAsset', () => {
   it('should assign varname if supplied with file', () => {
     const test = entry();
     const result = processAsset(chunks)([], test)[0];
-    expect(result.variable).toBe(test[1].varname)
+    expect(result.variable).toBe(test[1].varname);
   });
 
   it('should assign file if no varname supplied', () => {
     const test = entry();
     delete test[1].varname;
     const result = processAsset(chunks)([], test)[0];
-    expect(result.variable).toBe(test[1].file)
+    expect(result.variable).toBe(test[1].file);
   });
 
   it.each(['js', 'css'])('should get chunk file with %s extension', (ext) => {

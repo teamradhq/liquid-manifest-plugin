@@ -26,7 +26,7 @@ module.exports = () => {
           { filename: 'index.js' },
           { filename: 'style.js', varname: 'awesomeVariable' },
         ],
-      })
+      }),
     ],
     module: {
       rules: [

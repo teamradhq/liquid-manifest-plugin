@@ -1,5 +1,7 @@
 const path = require('path');
 
+const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
+
 const babelrc = require('./.babelrc');
 
 module.exports = () => {
@@ -41,5 +43,8 @@ module.exports = () => {
         },
       ],
     },
+    plugins: [new UnusedFilesWebpackPlugin({
+      patterns: ['src/**/*.js'],
+    })],
   };
 };

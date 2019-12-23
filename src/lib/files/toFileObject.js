@@ -10,8 +10,10 @@ const fileRegExp = new RegExp(/(.*)\.([A-Za-z0-9]{1,})$/);
  *
  * @return {Object}
  */
-const toFileObject = (chunks) => (str) => {
-  const match = str ? str.match(fileRegExp) : [];
+const toFileObject = (chunks) => (obj) => {
+  const match = (obj && obj.filename)
+    ? obj.filename.match(fileRegExp)
+    : [];
 
   const [
     filename,

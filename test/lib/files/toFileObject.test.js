@@ -18,22 +18,22 @@ const expected = {
 
 describe('lib.files.toFileObject', () => {
   it('should call lib.liquid.variableName', () => {
-    toFileObject()(filename);
+    toFileObject()({ filename });
     expect(variableName.default).toBeCalledTimes(1);
   });
 
   it('should call lib.files.findChunkFile once', () => {
-    toFileObject()(filename);
+    toFileObject()({ filename });
     expect(findChunkFile.default).toBeCalledTimes(1);
   });
 
   it('should call lib.files.findChunkFile with arguments', () => {
-    toFileObject()(filename);
+    toFileObject()({ filename });
     expect(findChunkFile.default).toBeCalledWith(undefined, name, ext);
   });
 
   it('should return an object of matches', () => {
-    expect(toFileObject()(filename)).toEqual(expected);
+    expect(toFileObject()({ filename })).toEqual(expected);
   });
 
   it('should  return an object of undefined', () => {

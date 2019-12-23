@@ -1,7 +1,7 @@
 import liquid from '@/lib/liquid';
 
 /** Generate a text block to assign a liquid asset variable */
-const renderAsset = ({ name, file, variable }) => {
+const assetBlock = ({ name, file, variable }) => {
   let block = '';
 
   block += liquid.comment(name);
@@ -11,4 +11,4 @@ const renderAsset = ({ name, file, variable }) => {
   return block;
 };
 
-export default renderAsset;
+export default assetBlock;

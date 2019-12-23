@@ -1,20 +1,20 @@
 import render from '@/lib/template/render';
 
-import renderAsset from '%/lib/template/renderAsset.mock';
+import assetBlock from '%/lib/template/assetBlock.mock';
 
 jest.mock('@/lib/template/message', () => 'message');
 
 const test = [1, 2, 3];
 
 describe('lib.template.render', () => {
-  it('should apply lib.template.renderAsset to each asset', () => {
+  it('should apply lib.template.assetBlock to each asset', () => {
     render(test);
-    expect(renderAsset.default)
+    expect(assetBlock.default)
       .toBeCalledTimes(test.length);
   });
 
   it('should concatenate template message and rendered assets', () => {
     expect(render([test[0]]))
-      .toBe(`message${renderAsset.expected}`);
+      .toBe(`message${assetBlock.expected}`);
   });
 });

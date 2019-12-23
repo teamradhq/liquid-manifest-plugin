@@ -1,4 +1,4 @@
-import renderAsset from '@/lib/template/renderAsset';
+import assetBlock from '@/lib/template/assetBlock';
 
 import liquid from '%/lib/liquid';
 
@@ -15,13 +15,13 @@ const test = {
 
 const expected = `${test.name}assetPath${test.variable}`;
 
-describe('lib.template.renderAsset', () => {
+describe('lib.template.assetBlock', () => {
   it.each(mocks)('should call lib.liquid.%s %s times', (fn, n) => {
-    renderAsset(test);
+    assetBlock(test);
     expect(liquid.default[fn]).toBeCalledTimes(n);
   });
 
   it('render an asset to liquid variable assignment', () => {
-    expect(renderAsset(test)).toBe(expected);
+    expect(assetBlock(test)).toBe(expected);
   });
 });

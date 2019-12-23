@@ -1,4 +1,4 @@
-import findChunkFile from '@/lib/chunks/findChunkFile';
+import findChunkFile from '@/lib/files/findChunkFile';
 
 const chunkName = 'test-chunk';
 

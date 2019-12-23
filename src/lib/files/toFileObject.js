@@ -1,5 +1,5 @@
 import variableName from '@/lib/liquid/variableName';
-import findChunkFile from '@/lib/chunks/findChunkFile';
+import findChunkFile from './findChunkFile';
 
 const fileRegExp = new RegExp(/(.*)\.([A-Za-z0-9]{1,})$/);
 

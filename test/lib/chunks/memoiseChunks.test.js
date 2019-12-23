@@ -1,4 +1,4 @@
-import memoiseChunks from '@/lib/chunks/memoiseChunks';
+import memoiseChunks from '@/lib/files/memoiseChunks';
 
 import memoiseObjectArray from '%/lib/helpers/memoiseObjectArray.mock';
 

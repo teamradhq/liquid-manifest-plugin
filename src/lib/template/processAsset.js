@@ -1,5 +1,5 @@
 import variableName from '@/lib/liquid/variableName';
-import findChunkFile from '@/lib/chunks/findChunkFile';
+import findChunkFile from '@/lib/files/findChunkFile';
 
 /**
  * Parse valid liquid variable and add chunk file.

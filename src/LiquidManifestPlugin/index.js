@@ -1,6 +1,5 @@
 import fs from 'fs';
 
-import chunks from '@/lib/chunks';
 import files from '@/lib/files';
 import template from '@/lib/template';
 
@@ -29,7 +28,7 @@ class LiquidManifestPlugin {
 
       const liquidVars = template.toAssetVariable(
         files.parse(inputFiles),
-        chunks.memoiseChunks(stats.compilation.chunks),
+        files.memoiseChunks(stats.compilation.chunks),
       );
 
       fs.writeFileSync(

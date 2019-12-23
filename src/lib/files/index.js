@@ -1,9 +1,13 @@
+import findChunkFile from './findChunkFile';
+import memoiseChunks from './memoiseChunks';
+import parse from './parse';
 import toFileObject from './toFileObject';
 import transformFileToAsset from './transformFileToAsset';
-import parse from './parse';
 
 export default {
+  findChunkFile,
+  memoiseChunks,
+  parse,
   toFileObject,
   transformFileToAsset,
-  parse,
 };

@@ -2,16 +2,21 @@ import assetBlock from '@/lib/template/assetBlock';
 
 import liquid from '%/lib/liquid';
 
+const test = {
+  name: 'name',
+  asset: 'file',
+  variable: 'variable',
+};
+
 const mocks = [
   ['comment', 1],
   ['variable', 2],
 ];
 
-const test = {
-  name: 'name',
-  file: 'file',
-  variable: 'variable',
-};
+const variables = [
+  ['asset_url', ['assetPath', `'${test.asset}' | asset_url | split: '?'`], 1],
+  ['assetPath[0]', [test.variable, 'assetPath[0]'], 2],
+];
 
 const expected = `${test.name}assetPath${test.variable}`;
 
@@ -24,13 +29,14 @@ describe('lib.template.assetBlock', () => {
     assetBlock(test);
     expect(liquid.default.comment).toBeCalledWith(test.name);
   });
-  it('should call lib.liquid.variable with args', (value) => {
-    assetBlock(test);
-    expect(liquid.default.variable).toBeCalledWith('assetPath');
-  });
 
   it.each(mocks)('should call lib.liquid.%s %s times', (fn, n) => {
     assetBlock(test);
     expect(liquid.default[fn]).toBeCalledTimes(n);
+  });
+
+  it.each(variables)('should define liquid variable for %s', (varname, args, n) => {
+    assetBlock(test);
+    expect(liquid.default.variable).nthCalledWith(n, ...args);
   });
 });

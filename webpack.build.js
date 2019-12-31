@@ -11,7 +11,7 @@ module.exports = () => {
   const dist = path.resolve(__dirname, 'build');
 
   const entry = {
-    'liquid-manifest-plugin': `${src}/LiquidManifestPlugin/index.js`,
+    'webpack-liquid-manifest-plugin': `${src}/LiquidManifestPlugin/index.js`,
   };
 
   const output = {

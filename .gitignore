@@ -1,7 +1,8 @@
 node_modules
 coverage
 dist
-build
+build/*
+!build/webpack-liquid-manifest-plugin.js
 *.log
 .DS_Store
 .Trashes

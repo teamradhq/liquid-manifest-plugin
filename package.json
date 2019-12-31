@@ -1,8 +1,8 @@
 {
-  "name": "liquid-manifest-plugin",
+  "name": "webpack-liquid-manifest-plugin",
   "version": "0.0.0",
   "description": "Webpack plugin to generate a liquid template containing the asset manifest",
-  "main": "index.js",
+  "main": "build/webpack-liquid-manifest-plugin.js",
   "author": "Paul Beynon <paul@beynon.app>",
   "license": "MIT",
   "scripts": {

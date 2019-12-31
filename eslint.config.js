@@ -20,8 +20,9 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
-    'max-len': ['error', { code: 120, ignoreTrailingComments: true }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-unresolved': 'off',
+    'max-len': ['error', { code: 120, ignoreTrailingComments: true }],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },

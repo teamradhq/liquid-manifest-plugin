@@ -1,4 +1,4 @@
-import LiquidManifestPlugin from '@/LiquidManifestPlugin';
+// import LiquidManifestPlugin from '@/LiquidManifestPlugin';
 
 describe('LiquidManifestPlugin', () => {
   it('should run tests', () => {
